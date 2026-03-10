@@ -15,6 +15,11 @@
                     throw new AbandonedMutexException("值大於 10");
                 }
 
+                if ( a > 10 )
+                {
+                    throw new MyExceptionClass("值大於 10");
+                }
+
                 c = a / b;
 
                 string[] name = new string[5];
@@ -29,6 +34,10 @@
                 Console.WriteLine("ERROR: " + ex.ToString());
             }
             catch (AbandonedMutexException ex)
+            {
+                Console.WriteLine("ERROR: " + ex.ToString());
+            }
+            catch(MyExceptionClass ex)
             {
                 Console.WriteLine("ERROR: " + ex.ToString());
             }
